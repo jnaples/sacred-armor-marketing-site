@@ -1,36 +1,136 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sacred Armor Landing Page Setup
 
-## Getting Started
+## Files Included
 
-First, run the development server:
+1. `homepage.tsx` - Main landing page component
+2. `globals.css` - Global styles with font imports
+3. `tailwind.config.js` - Tailwind configuration
+4. `README.md` - This file
+
+## Setup Instructions
+
+### 1. Create a new Next.js project (if you haven't already)
+
+```bash
+npx create-next-app@latest sacred-armor-site
+cd sacred-armor-site
+```
+
+When prompted:
+- TypeScript: Yes
+- ESLint: Yes
+- Tailwind CSS: Yes
+- `src/` directory: No
+- App Router: Yes
+- Import alias: Yes (@/*)
+
+### 2. Replace files
+
+Replace these files in your project:
+
+- Copy `homepage.tsx` content to `app/page.tsx`
+- Copy `globals.css` content to `app/globals.css`
+- Copy `tailwind.config.js` content to `tailwind.config.js` (root)
+
+### 3. Add placeholder image
+
+Create a folder structure:
+```
+public/
+  images/
+    app-screenshot.png
+```
+
+Add a screenshot of your app (1080x2340px or similar iPhone dimensions).
+
+Alternatively, replace the Image component with a placeholder div:
+
+```jsx
+<div className="w-full h-full bg-[#2a2d35] flex items-center justify-center">
+  <p className="text-[#666] font-inter">App Screenshot</p>
+</div>
+```
+
+### 4. Create privacy policy page
+
+Create `app/privacy-policy/page.tsx`:
+
+```tsx
+export default function PrivacyPolicy() {
+  return (
+    <div className="min-h-screen bg-[#1a1d23] text-[#E8E6E3] px-5 py-16">
+      <article className="max-w-3xl mx-auto prose prose-invert">
+        {/* Paste your privacy-policy.md content here as JSX */}
+      </article>
+    </div>
+  );
+}
+```
+
+### 5. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 6. Deploy to Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install -g vercel
+vercel
+```
 
-## Learn More
+Follow the prompts to deploy.
 
-To learn more about Next.js, take a look at the following resources:
+## Mobile Responsive Design
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The design is mobile-first and responsive:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Mobile (< 768px)**: Single column, centered content
+- **Tablet/Desktop (≥ 768px)**: Two-column hero, three-column features
 
-## Deploy on Vercel
+All spacing, text sizes, and layouts automatically adjust.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Key Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+✅ Matches app design system exactly
+✅ Fully responsive (mobile, tablet, desktop)
+✅ Optimized fonts (Newsreader + Inter)
+✅ Dark mode by default
+✅ Fast page loads with Next.js
+✅ SEO-friendly
+✅ Tailwind CSS for easy customization
+
+## Customization
+
+### Update Download Links
+
+Replace `#` in the `<a>` tags with your actual App Store and Google Play URLs:
+
+```tsx
+<a href="https://apps.apple.com/..." ...>
+<a href="https://play.google.com/..." ...>
+```
+
+### Update Contact Email
+
+The footer links to `jnaples90@gmail.com`. Update if needed.
+
+### Add More Sections
+
+Want testimonials, FAQ, or more features? Add sections between existing ones following the same pattern:
+
+```tsx
+<section className="px-5 py-16 md:py-24 bg-[#0f1115]">
+  <div className="max-w-6xl mx-auto">
+    {/* Your content */}
+  </div>
+</section>
+```
+
+## Need Help?
+
+Contact: jnaples90@gmail.com
+# sacred-armor-marketing-site
