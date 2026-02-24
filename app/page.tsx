@@ -7,7 +7,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="px-5 py-16 md:py-24 max-w-6xl mx-auto">
         <div className="container flex flex-col md:flex-row items-center gap-10">
-          <div className="flex flex-col gap-4 w-full md:w-1/2 items-start">
+          <div className="flex flex-col gap-3 w-full md:w-1/2 items-start">
             <h1 className="text-4xl md:text-6xl font-light font-newsreader">
               Sacred Armor
             </h1>
