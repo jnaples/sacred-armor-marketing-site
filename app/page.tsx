@@ -56,7 +56,7 @@ export default function Home() {
               <Link href="#">Terms of Service</Link>•
               <Link href="/privacy-policy">Privacy Policy</Link>•
               <Link href="#">Contact Us</Link>•
-              <Link href="#">Manage Subscription</Link>
+              <Link href="/manage-subscription">Manage Subscription</Link>
             </div>
             <div>
               <p className="text-center text-sm text-dark-text">
