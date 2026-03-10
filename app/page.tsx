@@ -20,7 +20,10 @@ export default function Home() {
               favorites, and build your armor one verse at a time.
             </p>
             <div className="flex gap-4 mt-4">
-              <Link href="#">
+              <Link
+                href="https://apps.apple.com/us/app/sacred-armor/id6759791605"
+                target="_blank"
+              >
                 <Image
                   src="/app-store-badge.svg"
                   alt="Download on the App Store"
