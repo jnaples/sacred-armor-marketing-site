@@ -1,5 +1,5 @@
 // components/VerseCard.tsx
-import { Bookmark, BookmarkCheck } from "lucide-react";
+import { Bookmark } from "lucide-react";
 
 type VerseCardProps = {
   verse: {
@@ -23,10 +23,8 @@ export default function VerseCard({
 
   return (
     <div
-      className="rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.4)]"
+      className="w-full max-w-[480px] rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.4)]"
       style={{
-        maxWidth: 480, // cap it on desktop — RN cards look odd at full width
-        backgroundColor: "#000",
         ...style,
       }}
     >
@@ -46,14 +44,14 @@ export default function VerseCard({
             {/* Bookmark button */}
             <button
               onClick={onSave}
-              className="absolute right-4 top-4 z-10 transition-opacity hover:opacity-70"
+              className="group/bookmark absolute right-4 top-4 z-10"
               aria-label={isSaved ? "Unsave verse" : "Save verse"}
             >
-              {isSaved ? (
-                <BookmarkCheck size={28} className="text-[#DE9D36]/80" />
-              ) : (
-                <Bookmark size={28} className="text-[#DE9D36]/80" />
-              )}
+              <Bookmark
+                size={28}
+                className="text-[#DE9D36]/80 transition-all group-hover/bookmark:text-[#DE9D36]"
+                fill={isSaved ? "rgba(222,157,54,0.8)" : "none"}
+              />
             </button>
 
             {/* Divider — LinearGradient equivalent */}
